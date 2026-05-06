@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
+    public bool isRunning = false;
 
     private int index;
 
@@ -36,9 +37,11 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
+        isRunning = true;
         index = 0;
+        textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
     }
 
@@ -61,6 +64,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            isRunning = false;
             gameObject.SetActive(false);
         }
     }
