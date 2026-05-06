@@ -9403,9 +9403,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 132158, guid: b29b15951e3f4f2f83b65c4b43aff9d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1108512538}
-    - targetCorrespondingSourceObject: {fileID: 132158, guid: b29b15951e3f4f2f83b65c4b43aff9d2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1108512539}
   m_SourcePrefab: {fileID: 100100000, guid: b29b15951e3f4f2f83b65c4b43aff9d2, type: 3}
 --- !u!1001 &1004114186
 PrefabInstance:
@@ -10375,20 +10372,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21904944, y: 0.00000003562309, z: 0.2774706}
   m_Center: {x: -0.0000007152557, y: 0.0022017588, z: 0.00000047683716}
---- !u!114 &1108512539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070082809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fcd4ca2a35f47e0aab690568797a81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Paper
-  textBox: {fileID: 1571309353}
-  isOpen: 0
 --- !u!1001 &1110446884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15361,14 +15344,13 @@ GameObject:
   - component: {fileID: 1571309354}
   - component: {fileID: 1571309357}
   - component: {fileID: 1571309356}
-  - component: {fileID: 1571309355}
   m_Layer: 5
   m_Name: StoryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1571309354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15389,22 +15371,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: -200, y: -400}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1571309355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571309353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe2dab694f2364b469c0b645ff6b7935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  textComponent: {fileID: 1060625314}
-  lines: []
-  textSpeed: 0
-  isRunning: 0
 --- !u!114 &1571309356
 MonoBehaviour:
   m_ObjectHideFlags: 0
