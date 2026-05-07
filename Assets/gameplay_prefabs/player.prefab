@@ -340,6 +340,9 @@ MonoBehaviour:
   UI: {fileID: 0}
   righthand: {fileID: 5096901073956595697}
   lefthand: {fileID: 7582640686766441406}
+  interactablelayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &6433469388844600138
 MonoBehaviour:
   m_ObjectHideFlags: 0

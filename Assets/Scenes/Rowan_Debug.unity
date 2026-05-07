@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 2093541672}
   - component: {fileID: 2093541671}
   - component: {fileID: 2093541675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,6 +799,10 @@ PrefabInstance:
     - target: {fileID: 8139795010830261183, guid: dd88b738f84ad4c67bc9ae315721c8d9, type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8139795010830261183, guid: dd88b738f84ad4c67bc9ae315721c8d9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

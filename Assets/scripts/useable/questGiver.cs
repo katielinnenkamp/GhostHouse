@@ -50,4 +50,9 @@ public class questGiver : Useable
                     Quaternion.identity);
         }
     }
+    
+    public override void Interact(GameObject Player)
+    {
+        
+    }
 }

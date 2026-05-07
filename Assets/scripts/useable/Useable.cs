@@ -14,7 +14,7 @@ public abstract class Useable : Interactable
     [SerializeField]
     protected bool no_key;
 
-    public bool Interact(int useditemind, Inventory inventory, playerMove user)
+    public bool Use(int useditemind, Inventory inventory, playerMove user)
     {
         for(int i = 0; i < keys.Length; i++)
         {
@@ -40,4 +40,10 @@ public abstract class Useable : Interactable
     }
 
     public abstract void Activate(int keyused);
+
+    public override void Interact(GameObject Player)
+    {
+        Player.TryGetComponent<playerMove>(out var playerscript);
+        Use(playerscript.heldindex, playerscript.inventory, playerscript);
+    }
 }
