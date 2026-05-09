@@ -27,9 +27,11 @@ public class playerMove : MonoBehaviour
     private float maxairtime;
     private float airtimer = 0f;
 
-    private int heldindex = 0;
+    //TODO this shouldn't be public but needs to be for usable objects; find a better way
+    public int heldindex = 0;
     private int hotbarslots = 6;
-    private Inventory inventory = new Inventory(6); //player inventory tracker, holds current items
+    public Inventory inventory = new Inventory(6); //player inventory tracker, holds current items
+    //UI inventory slots
     private VisualElement slot0;
     private VisualElement slot1;
     private VisualElement slot2;
@@ -70,6 +72,8 @@ public class playerMove : MonoBehaviour
 
         controls.Enable();
 
+        itemcolliders = new Collider[maxoverlapitems];
+
         if(UI.TryGetComponent<UIDocument>(out var temp))
         {
             uidoc = temp.rootVisualElement;
@@ -107,20 +111,21 @@ public class playerMove : MonoBehaviour
 
     }
 
+    //functions for capturing the cursor and application focus
+    // also includes inventory opening/closing function
+    #region cursor
     public void LockCursor()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = false;
         _isLocked = true;
     }
-
     public void UnlockCursor()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.None;
         UnityEngine.Cursor.visible = true;
         _isLocked = false;
     }
-
     // Re-lock when the game regains focus (tab switch, etc.)
     private void OnApplicationFocus(bool hasFocus)
     {
@@ -128,6 +133,22 @@ public class playerMove : MonoBehaviour
             LockCursor();
     }
 
+    void OpenInventory()
+    {
+        LockCursor();
+
+        UpdateUI();
+    }
+    void CloseInventory()
+    {
+        UnlockCursor();
+
+        UpdateUI();
+    } 
+    #endregion
+
+    //helper functions
+    #region movement_helper_functions
     bool Grounded()
     {
         if(Physics.Raycast(transform.position, Vector3.down, 1.0625f))
@@ -150,7 +171,6 @@ public class playerMove : MonoBehaviour
             return false;
         }
     }
-
     private float movex;
     private float movey;
     void OnMove(InputValue move)
@@ -160,7 +180,6 @@ public class playerMove : MonoBehaviour
         movex = movementVector.x;
         movey = movementVector.y;
     }
-
     private int maxBounces = 5;
     private float skinwidth = 0.015f;
     private Vector3 CollideAndSlide(Vector3 vel, Vector3 pos, int depth = 0)
@@ -193,17 +212,19 @@ public class playerMove : MonoBehaviour
 
         return vel;
     }
-    private void ChangeHeld()
-    {
+    #endregion
 
-    }
-
+    //Update and FixedUpdate; 
+    // Update handles input and look among other things
+    // FixedUpdate handles movement among other things
+    #region standard_updates
     private float yrotation;
     private float lookup;
     private bool groundedonupdate;
     // Update is called once per frame
     void Update()
     {
+        
         //wrap in boolean to disable when inside of a menu
         if(_isLocked)
         {
@@ -261,10 +282,12 @@ public class playerMove : MonoBehaviour
         //HandleNumberKeys();
         //HandleScrollWheel();
 
+
     }
     private float vertspeed;
     void FixedUpdate()
     {
+        InteractableUpdate();
         //get our movement and apply it
         Vector3 movement = new Vector3(movex * Time.deltaTime * movespeed, 0f, movey * Time.deltaTime * movespeed);
         movement = Quaternion.Euler(0f, yrotation, 0f) * movement;
@@ -301,25 +324,114 @@ public class playerMove : MonoBehaviour
             m_Walking.Pause();        
         }
     }
-
-    //TODO update to input manager
-    void HandleScrollWheel()
-    {
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (Mathf.Approximately(scroll, 0f)) return;
-
-
-        // Scroll down = next slot, scroll up = previous, wrapping around
-        int next = scroll < 0
-            ? (heldindex + 1) % hotbarslots
-            : (heldindex - 1 + hotbarslots) % hotbarslots;
-
-        TryChangeHeld(next);
-    }
+    #endregion
     
-    float maxinteractdist = 2f;
+    //contains everything surrounding items, including interaction and inventory management
+    #region item_interaction
+    [SerializeField]
+    LayerMask interactablelayer;
+    float maxinteractdist = 3f;
+    Interactable currentinteractable; //currently hovered over interactable
+    Interactable lastci; //currentinteractable from last frame
+    Collider[] itemcolliders;
+    int maxoverlapitems = 15;
+    void InteractableUpdate()
+    {
+        lastci = currentinteractable;
+        //first we see if the player is directly looking at any interactable object
+        RaycastHit hit;
+        if(Physics.Raycast(cam.transform.position, Quaternion.Euler(lookup, yrotation, 0f) * Vector3.forward, out hit, maxinteractdist, interactablelayer))
+        {
+            if(hit.collider.TryGetComponent<Interactable>(out var item)) 
+            {
+                currentinteractable = item;
+            }
+        }
+        //otherwise, we look for the object closest to the crosshair in a capsule in front of the player
+        else
+        {   
+            Vector3 point1 = cam.transform.position + (Quaternion.Euler(lookup, yrotation, 0f) * (Vector3.forward * (maxinteractdist * (1f/3f))));
+            Vector3 point2 = cam.transform.position + (Quaternion.Euler(lookup, yrotation, 0f) * (Vector3.forward * (maxinteractdist * (2f/3f))));
+            
+            Physics.OverlapCapsuleNonAlloc(point1, point2, 1f, itemcolliders, interactablelayer);
+
+            Ray ray = new Ray(cam.transform.position, Quaternion.Euler(lookup, yrotation, 0f) * Vector3.forward);
+
+            float shorestsqrdst = float.MaxValue;
+            Collider bestfit = null;
+            bool iteminview = false;
+            //find the object closest to the crosshair
+            for(int i = 0; i < maxoverlapitems; i++)
+            {
+                if(itemcolliders[i] != null)
+                {
+                    Vector3 originToPoint = itemcolliders[i].transform.position - ray.origin;
+
+                    // Project originToPoint onto the ray direction.
+                    // ray.direction is already normalized in Unity.
+                    float projection = Vector3.Dot(originToPoint, ray.direction);
+
+                    // Clamp to 0 so we don't project "behind" the ray origin
+                    projection = Mathf.Max(0f, projection);
+
+                    // Find the closest point on the ray to the object
+                    Vector3 closestPointOnRay = ray.origin + ray.direction * projection;
+
+                    // squared distance (no sqrt needed)
+                    float sqrdst = (itemcolliders[i].transform.position - closestPointOnRay).sqrMagnitude;
+
+                    if(sqrdst < shorestsqrdst)
+                    {
+                        //check line of sight to object before assigning it
+                        Vector3 direction = cam.transform.position - itemcolliders[i].transform.position;
+                        Physics.Raycast(itemcolliders[i].transform.position, direction.normalized, out var inbetween, Mathf.Infinity);
+                        if(inbetween.collider.gameObject == gameObject)
+                        {
+                            iteminview = true;
+
+                            shorestsqrdst = sqrdst;
+                            bestfit = itemcolliders[i];
+                        }
+                    }
+                }
+                //clear space in colliders so it doesn't persist
+                itemcolliders[i] = null;
+            }
+
+            if(!iteminview)
+            {
+                currentinteractable = null;
+            }
+            else
+            {
+                Debug.Log(bestfit.name);
+                bestfit.TryGetComponent<Interactable>(out var temp);
+                currentinteractable = temp;
+            }
+        }
+        
+        //if we have a new interactable object, update the item nametag UI
+        if(lastci != currentinteractable)
+        {
+
+        }
+    }
+
     bool TryInteract()
     {
+        if(currentinteractable == null)
+        {
+            return false;
+        }
+        else
+        {
+            currentinteractable.Interact(this.gameObject);
+            UpdateUI();
+            return true;
+        }
+        
+        /*
+        //old code
         RaycastHit hit;
         if(Physics.Raycast(cam.transform.position, Quaternion.Euler(lookup, yrotation, 0f) * Vector3.forward, out hit, maxinteractdist))
         
@@ -340,6 +452,22 @@ public class playerMove : MonoBehaviour
             }
         }
         return false;
+        */
+    }
+
+    //TODO update to input manager
+    void HandleScrollWheel()
+    {
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (Mathf.Approximately(scroll, 0f)) return;
+
+
+        // Scroll down = next slot, scroll up = previous, wrapping around
+        int next = scroll < 0
+            ? (heldindex + 1) % hotbarslots
+            : (heldindex - 1 + hotbarslots) % hotbarslots;
+
+        TryChangeHeld(next);
     }
 
     void DropItem(int ind)
@@ -372,7 +500,7 @@ public class playerMove : MonoBehaviour
         UpdateUI();
     }
 
-    Item GetHeldItem()
+    public Item GetHeldItem()
     {
         Item ret;
         if(inventory.TryGetItem(heldindex, out ret))
@@ -392,19 +520,6 @@ public class playerMove : MonoBehaviour
             return false;
         }
     }
-
-    void OpenInventory()
-    {
-        LockCursor();
-
-        UpdateUI();
-    }
-    void CloseInventory()
-    {
-        UnlockCursor();
-
-        UpdateUI();
-    } 
 
     void UpdateUI()
     {
@@ -451,7 +566,7 @@ public class playerMove : MonoBehaviour
             }
         }
     }  
-
+    
     void UseHeld(InputAction.CallbackContext ctx)
     {
         Item held = GetHeldItem();
@@ -461,4 +576,5 @@ public class playerMove : MonoBehaviour
         }
         return;
     }
+    #endregion
 }

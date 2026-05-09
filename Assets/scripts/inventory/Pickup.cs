@@ -18,4 +18,10 @@ public class Pickup : Interactable
             return false;
         }
     }
+
+    public override void Interact(GameObject Player)
+    {
+        Player.TryGetComponent<playerMove>(out var temp);
+        Grab(temp.inventory);
+    }
 }
