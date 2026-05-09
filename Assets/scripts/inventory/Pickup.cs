@@ -24,4 +24,9 @@ public class Pickup : Interactable
         Player.TryGetComponent<playerMove>(out var temp);
         Grab(temp.inventory);
     }
+
+    public override string GetName()
+    {
+        return item_form.item_name;
+    }
 }

@@ -13,6 +13,8 @@ public abstract class Useable : Interactable
     protected key_use_pair[] keys;
     [SerializeField]
     protected bool no_key;
+    [SerializeField]
+    protected string displayname;
 
     public bool Use(int useditemind, Inventory inventory, playerMove user)
     {
@@ -45,5 +47,10 @@ public abstract class Useable : Interactable
     {
         Player.TryGetComponent<playerMove>(out var playerscript);
         Use(playerscript.heldindex, playerscript.inventory, playerscript);
+    }
+
+    public override string GetName()
+    {
+        return displayname;
     }
 }
