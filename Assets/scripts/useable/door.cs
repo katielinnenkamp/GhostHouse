@@ -11,6 +11,9 @@ public class door : Useable
         //unlock door
         no_key = true;
 
+        //stop requiring key
+        keys = new key_use_pair[1];
+
         //open/close door
         if(opened)
         {

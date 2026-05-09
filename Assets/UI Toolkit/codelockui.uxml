@@ -1,0 +1,20 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="visualarea" style="flex-grow: 1; width: 50%; height: 45%; min-height: auto; min-width: auto; max-height: 50%; max-width: 50%; left: 25%; top: 25%; background-color: rgb(152, 152, 152);">
+        <ui:Label text="9" name="number0" style="font-size: 10px; color: rgb(255, 255, 255); -unity-font-style: bold; width: 3%; top: 40%; left: 20%; position: absolute; height: 10%;">
+            <ui:Button text="⌄" name="decrease" style="top: auto; left: -125%; bottom: -472%; position: absolute; max-width: 5%; max-height: 5%; width: 5%; height: 5%; min-width: 5%; min-height: 5%;"/>
+            <ui:Button text="^" name="increase" style="top: -393%; left: -125%; position: absolute; width: 5%; max-width: 5%; max-height: 5%; -unity-font-style: normal; font-size: 10px; min-width: 5%; min-height: 5%; height: 5%;"/>
+        </ui:Label>
+        <ui:Label text="9" name="number1" style="font-size: 10px; color: rgb(255, 255, 255); -unity-font-style: bold; width: 3%; top: 40%; left: 40%; position: absolute; height: 10%;">
+            <ui:Button text="^" name="increase" style="top: -393%; left: -125%; position: absolute; width: 5%; max-width: 5%; max-height: 5%; -unity-font-style: normal; font-size: 10px; min-width: 5%; min-height: 5%; height: 5%;"/>
+            <ui:Button text="⌄" name="decrease" style="top: auto; left: -125%; bottom: -472%; position: absolute; max-width: 5%; max-height: 5%; width: 5%; height: 5%; min-width: 5%; min-height: 5%;"/>
+        </ui:Label>
+        <ui:Label text="9" name="number2" style="font-size: 10px; color: rgb(255, 255, 255); -unity-font-style: bold; width: 3%; top: 40%; left: 60%; position: absolute; height: 10%;">
+            <ui:Button text="^" name="increase" style="top: -393%; left: -125%; position: absolute; width: 5%; max-width: 5%; max-height: 5%; -unity-font-style: normal; font-size: 10px; min-width: 5%; min-height: 5%; height: 5%;"/>
+            <ui:Button text="⌄" name="decrease" style="top: auto; left: -125%; bottom: -472%; position: absolute; max-width: 5%; max-height: 5%; width: 5%; height: 5%; min-height: 5%; min-width: 5%;"/>
+        </ui:Label>
+        <ui:Label text="9" name="number3" style="font-size: 10px; color: rgb(255, 255, 255); -unity-font-style: bold; width: 3%; top: 40%; left: 80%; position: absolute; height: 10%;">
+            <ui:Button text="^" name="increase" style="top: -393%; left: -125%; position: absolute; width: 5%; max-width: 5%; max-height: 5%; -unity-font-style: normal; font-size: 10px; min-width: 5%; min-height: 5%; height: 5%;"/>
+            <ui:Button text="⌄" name="decrease" style="top: auto; left: -125%; bottom: -472%; position: absolute; max-width: 5%; max-height: 5%; width: 5%; height: 5%; min-height: 5%; min-width: 5%;"/>
+        </ui:Label>
+    </ui:VisualElement>
+</ui:UXML>

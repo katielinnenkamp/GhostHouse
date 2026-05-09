@@ -19,6 +19,8 @@ public class playerMove : MonoBehaviour
     private float sensitivity = 1f; //sensitivity of mouse movement
     private bool _isLocked = true;
 
+    private UIDocument openedmenu;
+
     [SerializeField]
     private float gravity = 18f; //gravity; higher gravity feels less floaty
     [SerializeField]
@@ -60,6 +62,8 @@ public class playerMove : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        openedmenu = null;
+
         bounds = GetComponent<Collider>().bounds;
         bounds.Expand(-2 * skinwidth);
 
@@ -121,7 +125,7 @@ public class playerMove : MonoBehaviour
 
     //functions for capturing the cursor and application focus
     // also includes inventory opening/closing function
-    #region cursor
+    #region cursor_and_menues
     public void LockCursor()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
@@ -141,18 +145,39 @@ public class playerMove : MonoBehaviour
             LockCursor();
     }
 
-    void OpenInventory()
+    void OpenMenu()
+    {
+        UnlockCursor();
+        
+        UpdateUI();
+    }
+    void CloseMenu()
     {
         LockCursor();
 
-        UpdateUI();
-    }
-    void CloseInventory()
-    {
-        UnlockCursor();
+        if(openedmenu != null)
+        {
+            openedmenu.rootVisualElement.style.display = DisplayStyle.None;
+            openedmenu = null;
+        }
 
         UpdateUI();
     } 
+
+    //returns true if *not already in menu*
+    public bool TryEnterMenu(UIDocument _menu)
+    {
+        if(!_isLocked)
+        {
+            return false;
+        }
+        else
+        {
+            openedmenu = _menu;
+            OpenMenu();
+            return true;
+        }
+    }
     #endregion
 
     //helper functions
@@ -280,11 +305,11 @@ public class playerMove : MonoBehaviour
         {
             if(!_isLocked)
             {
-                OpenInventory();
+                CloseMenu();
             }
             else
             {
-                CloseInventory();
+                OpenMenu();
             }
         }
         //HandleNumberKeys();
@@ -298,9 +323,17 @@ public class playerMove : MonoBehaviour
         InteractableUpdate();
         //get our movement and apply it
         Vector3 movement = new Vector3(movex * Time.deltaTime * movespeed, 0f, movey * Time.deltaTime * movespeed);
+        if(!_isLocked)
+        {
+            if(movement != Vector3.zero)
+            {
+                CloseMenu();
+            }
+        }
         movement = Quaternion.Euler(0f, yrotation, 0f) * movement;
         this.transform.position += CollideAndSlide(movement, this.transform.position);
-
+        //if we move, exit out of any menus we're in
+        
         // fall if we're in the air, stop falling if we're on the ground
         if(!Grounded())
         {
