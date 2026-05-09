@@ -24,7 +24,6 @@ public class questGiver : Useable
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
-            // Did we hit THIS NPC?
             if (hit.collider.gameObject == gameObject)
             {
                 if (Input.GetMouseButtonDown(0))
