@@ -40,7 +40,11 @@ public class playerMove : MonoBehaviour
     private VisualElement slot5;
     private VisualElement[] icons = new VisualElement[6];
 
-    private VisualElement uidoc;
+    private VisualElement itemtag;
+    private Label itemtagtext;
+
+    private UIDocument uidoc;
+    private VisualElement rootve;
     [SerializeField]
     private GameObject UI;
 
@@ -74,16 +78,16 @@ public class playerMove : MonoBehaviour
 
         itemcolliders = new Collider[maxoverlapitems];
 
-        if(UI.TryGetComponent<UIDocument>(out var temp))
+        if(UI.TryGetComponent<UIDocument>(out uidoc))
         {
-            uidoc = temp.rootVisualElement;
-            //selectedname = uidoc.Q<Label>("selected_name");
-            slot0 = uidoc.Q<VisualElement>("slot0");
-            slot1 = uidoc.Q<VisualElement>("slot1");
-            slot2 = uidoc.Q<VisualElement>("slot2");
-            slot3 = uidoc.Q<VisualElement>("slot3");
-            slot4 = uidoc.Q<VisualElement>("slot4");
-            slot5 = uidoc.Q<VisualElement>("slot5");
+            rootve = uidoc.rootVisualElement;
+            //selectedname = rootve.Q<Label>("selected_name");
+            slot0 = rootve.Q<VisualElement>("slot0");
+            slot1 = rootve.Q<VisualElement>("slot1");
+            slot2 = rootve.Q<VisualElement>("slot2");
+            slot3 = rootve.Q<VisualElement>("slot3");
+            slot4 = rootve.Q<VisualElement>("slot4");
+            slot5 = rootve.Q<VisualElement>("slot5");
 
             icons[0] = slot0.Q<VisualElement>("icon");
             icons[1] = slot1.Q<VisualElement>("icon");
@@ -100,6 +104,10 @@ public class playerMove : MonoBehaviour
             controls.Hotbar.SelectSlot6.performed += lamb => TryChangeHeld(5);
 
             controls.Player.Attack.performed += UseHeld;
+
+            itemtag = rootve.Q<VisualElement>("itemtagcontainer");
+            itemtagtext = itemtag.Q<Label>("itemtag");
+            itemtag.style.display = DisplayStyle.None;
             
             UpdateUI();
         }   
@@ -332,7 +340,7 @@ public class playerMove : MonoBehaviour
     LayerMask interactablelayer;
     float maxinteractdist = 3f;
     Interactable currentinteractable; //currently hovered over interactable
-    Interactable lastci; //currentinteractable from last frame
+    Interactable lastci = null; //currentinteractable from last frame
     Collider[] itemcolliders;
     int maxoverlapitems = 15;
     void InteractableUpdate()
@@ -384,8 +392,14 @@ public class playerMove : MonoBehaviour
                     {
                         //check line of sight to object before assigning it
                         Vector3 direction = cam.transform.position - itemcolliders[i].transform.position;
-                        Physics.Raycast(itemcolliders[i].transform.position, direction.normalized, out var inbetween, Mathf.Infinity);
-                        if(inbetween.collider.gameObject == gameObject)
+                        if(!Physics.Raycast(itemcolliders[i].transform.position, direction.normalized, out var inbetween, Mathf.Infinity))
+                        {
+                            iteminview = true;
+
+                            shorestsqrdst = sqrdst;
+                            bestfit = itemcolliders[i];
+                        }
+                        else if(inbetween.collider.gameObject == gameObject)
                         {
                             iteminview = true;
 
@@ -397,23 +411,36 @@ public class playerMove : MonoBehaviour
                 //clear space in colliders so it doesn't persist
                 itemcolliders[i] = null;
             }
-
             if(!iteminview)
             {
                 currentinteractable = null;
             }
             else
             {
-                Debug.Log(bestfit.name);
                 bestfit.TryGetComponent<Interactable>(out var temp);
                 currentinteractable = temp;
             }
         }
         
         //if we have a new interactable object, update the item nametag UI
-        if(lastci != currentinteractable)
+        if(currentinteractable == null)
         {
+            itemtag.style.display = DisplayStyle.None;
+        }
+        else
+        {
+            itemtag.style.display = DisplayStyle.Flex;
+            itemtagtext.text = currentinteractable.GetName();
+        }
 
+        if(currentinteractable != null)
+        {
+            Vector2 screenpos = cam.WorldToScreenPoint(currentinteractable.transform.position);
+
+            var panelSize = uidoc.rootVisualElement.panel.visualTree.layout;
+
+            itemtag.style.left = (screenpos.x / Screen.width) * panelSize.width;
+            itemtag.style.bottom = (screenpos.y / Screen.height) * panelSize.height - 10f;
         }
     }
 

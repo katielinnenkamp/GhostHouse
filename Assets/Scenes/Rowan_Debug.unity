@@ -689,6 +689,7 @@ MonoBehaviour:
   - key: {fileID: 11400000, guid: 001860cd6a98a45eeb8af1eed73a6118, type: 2}
     consumed: 1
   no_key: 0
+  displayname: Door
   opened: 0
   hinge: {fileID: 464753530}
 --- !u!1001 &2455948334371388631

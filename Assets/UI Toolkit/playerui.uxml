@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/uistyle.uss?fileID=7433441132597879392&amp;guid=f5fc592eb1e03457a9122f417a270418&amp;type=3#uistyle"/>
-    <ui:VisualElement name="VisualElement" style="flex-grow: 1; top: auto; left: auto;">
+    <ui:VisualElement name="constantUI" style="flex-grow: 1; top: auto; left: auto;">
         <ui:VisualElement name="hotbar" style="flex-grow: 1; width: 50%; height: auto; align-items: auto; left: auto; justify-content: flex-start; background-color: rgba(171, 171, 171, 0.69); max-height: 16%; bottom: -78%; flex-direction: row; align-self: center; aspect-ratio: 5.555555;">
             <ui:VisualElement name="slot0" class="slot" style="flex-grow: 1; width: auto; height: auto; align-items: auto; left: 2%; justify-content: flex-start; max-height: 80%; bottom: auto; flex-direction: row; align-self: center; min-height: 80%; min-width: 14.3333%; max-width: 14.3333%;">
                 <ui:VisualElement name="icon" style="flex-grow: 1; position: absolute; width: 96%; height: 96%; left: 2%; top: 2%;"/>
@@ -22,5 +22,8 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="crosshair" style="flex-grow: 1; width: 1%; height: 1%; max-height: 1px; max-width: 1px; min-width: 1px; min-height: 1px; top: 33%; left: 50%; background-color: rgb(188, 188, 188); align-items: center; justify-content: center; align-self: stretch;"/>
+        <ui:VisualElement name="itemtagcontainer" style="flex-grow: 1; position: absolute; top: 0; left: 0; bottom: auto; align-items: center; justify-content: flex-end; align-self: center; align-content: center;">
+            <ui:Label text="" name="itemtag" style="color: rgb(255, 255, 255); font-size: 6px; position: absolute;"/>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
