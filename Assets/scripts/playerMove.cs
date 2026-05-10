@@ -42,6 +42,8 @@ public class playerMove : MonoBehaviour
     private VisualElement slot5;
     private VisualElement[] icons = new VisualElement[6];
 
+    private Label helditemlabel;
+
     private VisualElement itemtag;
     private Label itemtagtext;
 
@@ -108,6 +110,8 @@ public class playerMove : MonoBehaviour
             controls.Hotbar.SelectSlot6.performed += lamb => TryChangeHeld(5);
 
             controls.Player.Attack.performed += UseHeld;
+
+            helditemlabel = rootve.Q<Label>("held_item_label");
 
             itemtag = rootve.Q<VisualElement>("itemtagcontainer");
             itemtagtext = itemtag.Q<Label>("itemtag");
@@ -385,7 +389,10 @@ public class playerMove : MonoBehaviour
         {
             if(hit.collider.TryGetComponent<Interactable>(out var item)) 
             {
-                currentinteractable = item;
+                if(item.enabled)
+                {
+                    currentinteractable = item;
+                }
             }
         }
         //otherwise, we look for the object closest to the crosshair in a capsule in front of the player
@@ -405,39 +412,44 @@ public class playerMove : MonoBehaviour
             for(int i = 0; i < maxoverlapitems; i++)
             {
                 if(itemcolliders[i] != null)
-                {
-                    Vector3 originToPoint = itemcolliders[i].transform.position - ray.origin;
-
-                    // Project originToPoint onto the ray direction.
-                    // ray.direction is already normalized in Unity.
-                    float projection = Vector3.Dot(originToPoint, ray.direction);
-
-                    // Clamp to 0 so we don't project "behind" the ray origin
-                    projection = Mathf.Max(0f, projection);
-
-                    // Find the closest point on the ray to the object
-                    Vector3 closestPointOnRay = ray.origin + ray.direction * projection;
-
-                    // squared distance (no sqrt needed)
-                    float sqrdst = (itemcolliders[i].transform.position - closestPointOnRay).sqrMagnitude;
-
-                    if(sqrdst < shorestsqrdst)
+                {   
+                    itemcolliders[i].TryGetComponent<Interactable>(out var temp);
+                    //if an items iteract is not marked enabled, do not interact
+                    if(temp.enabled)
                     {
-                        //check line of sight to object before assigning it
-                        Vector3 direction = cam.transform.position - itemcolliders[i].transform.position;
-                        if(!Physics.Raycast(itemcolliders[i].transform.position, direction.normalized, out var inbetween, Mathf.Infinity))
-                        {
-                            iteminview = true;
+                        Vector3 originToPoint = itemcolliders[i].transform.position - ray.origin;
 
-                            shorestsqrdst = sqrdst;
-                            bestfit = itemcolliders[i];
-                        }
-                        else if(inbetween.collider.gameObject == gameObject)
-                        {
-                            iteminview = true;
+                        // Project originToPoint onto the ray direction.
+                        // ray.direction is already normalized in Unity.
+                        float projection = Vector3.Dot(originToPoint, ray.direction);
 
-                            shorestsqrdst = sqrdst;
-                            bestfit = itemcolliders[i];
+                        // Clamp to 0 so we don't project "behind" the ray origin
+                        projection = Mathf.Max(0f, projection);
+
+                        // Find the closest point on the ray to the object
+                        Vector3 closestPointOnRay = ray.origin + ray.direction * projection;
+
+                        // squared distance (no sqrt needed)
+                        float sqrdst = (itemcolliders[i].transform.position - closestPointOnRay).sqrMagnitude;
+
+                        if(sqrdst < shorestsqrdst)
+                        {
+                            //check line of sight to object before assigning it
+                            Vector3 direction = cam.transform.position - itemcolliders[i].transform.position;
+                            if(!Physics.Raycast(itemcolliders[i].transform.position, direction.normalized, out var inbetween, Mathf.Infinity))
+                            {
+                                iteminview = true;
+
+                                shorestsqrdst = sqrdst;
+                                bestfit = itemcolliders[i];
+                            }
+                            else if(inbetween.collider.gameObject == gameObject)
+                            {
+                                iteminview = true;
+
+                                shorestsqrdst = sqrdst;
+                                bestfit = itemcolliders[i];
+                            }
                         }
                     }
                 }
@@ -624,6 +636,13 @@ public class playerMove : MonoBehaviour
             {
                 icons[i].style.backgroundImage = new StyleBackground(temp.icon);
             }
+        }
+        if(GetHeldItem() != null)
+        {
+            helditemlabel.text = GetHeldItem().item_name;
+        }
+        else{
+            helditemlabel.text = "";
         }
     }  
     

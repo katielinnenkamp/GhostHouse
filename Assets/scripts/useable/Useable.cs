@@ -16,7 +16,8 @@ public abstract class Useable : Interactable
     [SerializeField]
     protected string displayname;
 
-    public bool Use(int useditemind, Inventory inventory, playerMove user)
+    //Use script; doesn't need to be overwritten, just provides a key to Activate() if its int the key list
+    public virtual bool Use(int useditemind, Inventory inventory, playerMove user)
     {
         for(int i = 0; i < keys.Length; i++)
         {
@@ -41,14 +42,17 @@ public abstract class Useable : Interactable
         return false;
     }
 
+    //function called when a key within keys array is used on this object
     public abstract void Activate(int keyused);
 
+    //standard interaction implementation
     public override void Interact(GameObject Player)
     {
         Player.TryGetComponent<playerMove>(out var playerscript);
         Use(playerscript.heldindex, playerscript.inventory, playerscript);
     }
 
+    //used to get the object's name for interaction display purposes
     public override string GetName()
     {
         return displayname;
