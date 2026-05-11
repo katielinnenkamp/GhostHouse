@@ -5,6 +5,7 @@ public class door : Useable
     public bool opened = false;
     [SerializeField]
     private GameObject hinge;
+    private AudioManager _audioManager;
 
     public override void Activate(int keyused)
     {
@@ -17,11 +18,13 @@ public class door : Useable
         //open/close door
         if(opened)
         {
+            _audioManager.DoorClopen(opened);
             opened = false;
             transform.RotateAround(hinge.transform.position, Vector3.up, 90);
         }
         else
         {
+            _audioManager.DoorClopen(opened);
             opened = true;
             transform.RotateAround(hinge.transform.position, Vector3.up, -90);
         }

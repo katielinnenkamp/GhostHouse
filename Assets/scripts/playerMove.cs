@@ -58,8 +58,8 @@ public class playerMove : MonoBehaviour
     private GameObject lefthand;
 
     public MyInputActions controls;
+    private AudioManager _audioManager;
     private AudioSource m_Walking;
-    private AudioSource m_Pickup;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -69,9 +69,8 @@ public class playerMove : MonoBehaviour
         bounds = GetComponent<Collider>().bounds;
         bounds.Expand(-2 * skinwidth);
 
-        var m_Sources = GetComponents<AudioSource>();
-        m_Walking = m_Sources[0];
-        m_Pickup = m_Sources[1];
+        m_Walking = GameObject.Find("Walking").GetComponent<AudioSource>();
+        if (m_Walking == null) Debug.LogError("m_Walking is Null");
 
         yrotation = 0f;
         lookup = 0f;
