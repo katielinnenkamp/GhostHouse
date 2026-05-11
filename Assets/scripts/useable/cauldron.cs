@@ -38,9 +38,4 @@ public class cauldron : Useable
                 Quaternion.identity);
         m_PotionDrop.Play();
     }
-
-    public override void Interact(GameObject Player)
-    {
-        
-    }
 }

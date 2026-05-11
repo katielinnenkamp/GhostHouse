@@ -11,6 +11,8 @@ public class questGiver : Useable
 
     [SerializeField]
     private Item reward;
+    [SerializeField]
+    private GameObject rewardspot;
 
     void Start()
     {
@@ -32,7 +34,8 @@ public class questGiver : Useable
                     {
                         return;
                     }
-                    Activate(0);
+                    dialogBox.SetActive(true);
+                    dialogue.StartDialogue();
                 }
             }
         }
@@ -40,18 +43,12 @@ public class questGiver : Useable
 
     public override void Activate(int keyused)
     {
-        dialogBox.SetActive(true);
-        dialogue.StartDialogue();
-        if (reward)
+        
+        if(reward)
         {
             Instantiate(reward.item_prefab,
-                    transform.position + new Vector3(1f, 0f, -1f),
+                    rewardspot.transform.position,
                     Quaternion.identity);
         }
-    }
-    
-    public override void Interact(GameObject Player)
-    {
-        
     }
 }

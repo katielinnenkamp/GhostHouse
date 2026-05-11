@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4981449333164692991}
   - component: {fileID: -3694490220480193022}
   - component: {fileID: 5521308544556353878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Potion_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7dd516ea34cd4024b309bbde0af6021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
+  enabled: 1
   item_form: {fileID: 11400000, guid: ee0cf508fa26c4012b36026bc0c63934, type: 2}
 --- !u!65 &-3694490220480193022
 BoxCollider:

@@ -7,6 +7,11 @@ public class door : Useable
     private GameObject hinge;
     private AudioManager _audioManager;
 
+    void Awake()
+    {
+        _audioManager = FindFirstObjectByType<AudioManager>();
+    }
+
     public override void Activate(int keyused)
     {
         //unlock door
