@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121d220109ed6436ebef5fb14f21ab5a, type: 3}
   m_Name: Key
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  item_name: Key
+  item_name: Kitchen Key
   item_prefab: {fileID: 1823396362773719192, guid: 491e8e506ceb34dd585dd6158ccc28de, type: 3}
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

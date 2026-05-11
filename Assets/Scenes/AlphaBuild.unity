@@ -4745,6 +4745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClutterBowl03Ing03b
       objectReference: {fileID: 0}
+    - target: {fileID: 5247532383735214700, guid: 628ce2b452238467db946716575eb977, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8317614118135869610, guid: 628ce2b452238467db946716575eb977, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.3347304
@@ -11796,6 +11800,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: fe94eb06e4d40a84582ca0898b264da1, type: 3}
   m_PrefabInstance: {fileID: 424358653}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &432881059
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.202781
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000099317276
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.6964965
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607473642697072133, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452489631631767776, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82b3f2a4d10b7b541b321f2c1a0a486d, type: 3}
 --- !u!1 &438842885
 GameObject:
   m_ObjectHideFlags: 0
@@ -18134,6 +18195,10 @@ PrefabInstance:
     - target: {fileID: 5066788609466135390, guid: 840b0ed4c20c54d718ee75552f1ff1d8, type: 3}
       propertyPath: m_Name
       value: Apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066788609466135390, guid: 840b0ed4c20c54d718ee75552f1ff1d8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8364481043872567528, guid: 840b0ed4c20c54d718ee75552f1ff1d8, type: 3}
       propertyPath: m_LocalScale.y
@@ -42428,6 +42493,10 @@ PrefabInstance:
       value: Kitchen Door
       objectReference: {fileID: 0}
     - target: {fileID: 1398413310623440, guid: ff36c605a739def44ad4a550d4ab7d54, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398413310623440, guid: ff36c605a739def44ad4a550d4ab7d54, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -42498,10 +42567,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::door
   enabled: 1
   keys:
-  - key: {fileID: 0}
-    consumed: 0
+  - key: {fileID: 11400000, guid: 8f11c41c4a20c44b49bfb5df198d3b57, type: 2}
+    consumed: 1
   no_key: 0
-  displayname: 
+  displayname: Door
   opened: 0
   hinge: {fileID: 334279595}
 --- !u!1001 &1612325543
@@ -57276,3 +57345,4 @@ SceneRoots:
   - {fileID: 491379063}
   - {fileID: 2128742980}
   - {fileID: 737039038}
+  - {fileID: 432881059}
