@@ -922,7 +922,7 @@ MonoBehaviour:
   m_woodwalk: {fileID: 3827592713373770399}
   m_flashlightON: {fileID: 8730152240115010358}
   m_flashlightOFF: {fileID: 166272933797034336}
-  m_pickupSource: {fileID: 0}
+  m_pickupSource: {fileID: 7052607333077427955}
   m_pickupClips:
   - {fileID: 8300000, guid: 5896936044bf3184793c8954bebedcad, type: 3}
   - {fileID: 8300000, guid: 7a0ffd4db32ceca4cac1cd7f66311bc4, type: 3}

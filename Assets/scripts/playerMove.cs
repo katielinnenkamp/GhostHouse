@@ -69,8 +69,11 @@ public class playerMove : MonoBehaviour
         bounds = GetComponent<Collider>().bounds;
         bounds.Expand(-2 * skinwidth);
 
-        m_Walking = GameObject.Find("Walking").GetComponent<AudioSource>();
+        m_Walking = GameObject.Find("Woodwalk").GetComponent<AudioSource>();
         if (m_Walking == null) Debug.LogError("m_Walking is Null");
+        m_Walking.Stop();
+        _audioManager = FindFirstObjectByType<AudioManager>();
+        if (_audioManager == null) Debug.LogError("_audioManager is NULL");
 
         yrotation = 0f;
         lookup = 0f;
@@ -499,6 +502,7 @@ public class playerMove : MonoBehaviour
         else
         {
             currentinteractable.Interact(this.gameObject);
+            _audioManager.PlayRandomPickup();
             UpdateUI();
             return true;
         }
