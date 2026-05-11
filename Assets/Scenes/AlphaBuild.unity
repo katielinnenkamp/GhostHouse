@@ -24867,7 +24867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::paper
   dialogBox: {fileID: 2038871694}
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 1436631246}
   interactDistance: 3
 --- !u!65 &883502899
 BoxCollider:
@@ -25489,7 +25489,7 @@ MonoBehaviour:
   displayname: 
   dialogBox: {fileID: 81082173}
   dialogue: {fileID: 81082175}
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 1436631246}
   interactDistance: 3
   reward: {fileID: 0}
 --- !u!1001 &912632086
@@ -33686,8 +33686,8 @@ MonoBehaviour:
   keys: []
   no_key: 0
   displayname: 
-  dialogBox: {fileID: 0}
-  dialogue: {fileID: 0}
+  dialogBox: {fileID: 521471616}
+  dialogue: {fileID: 521471618}
   playerCamera: {fileID: 1436631246}
   interactDistance: 3
   reward: {fileID: 0}
@@ -43279,7 +43279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1644251408
 Transform:
   m_ObjectHideFlags: 0
