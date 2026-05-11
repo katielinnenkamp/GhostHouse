@@ -2430,8 +2430,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::door
   enabled: 1
   keys:
-  - key: {fileID: 11400000, guid: 9211684f383034d21b4b2267a3743b71, type: 2}
-    consumed: 0
+  - key: {fileID: 11400000, guid: c3c33bd2f284f427491baf59850f1514, type: 2}
+    consumed: 1
   no_key: 0
   displayname: 
   opened: 0
