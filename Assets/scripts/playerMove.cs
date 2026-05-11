@@ -381,13 +381,13 @@ public class playerMove : MonoBehaviour
     Interactable currentinteractable; //currently hovered over interactable
     Interactable lastci = null; //currentinteractable from last frame
     Collider[] itemcolliders;
-    int maxoverlapitems = 15;
+    int maxoverlapitems = 20;
     void InteractableUpdate()
     {
         lastci = currentinteractable;
         //first we see if the player is directly looking at any interactable object
         RaycastHit hit;
-        if(Physics.Raycast(cam.transform.position, Quaternion.Euler(lookup, yrotation, 0f) * Vector3.forward, out hit, maxinteractdist))
+        if(Physics.Raycast(cam.transform.position, Quaternion.Euler(lookup, yrotation, 0f) * Vector3.forward, out hit, maxinteractdist, interactablelayer))
         {
             if(hit.collider.TryGetComponent<Interactable>(out var item)) 
             {
@@ -403,7 +403,7 @@ public class playerMove : MonoBehaviour
             Vector3 point1 = cam.transform.position + (Quaternion.Euler(lookup, yrotation, 0f) * (Vector3.forward * (maxinteractdist * (1f/3f))));
             Vector3 point2 = cam.transform.position + (Quaternion.Euler(lookup, yrotation, 0f) * (Vector3.forward * (maxinteractdist * (2f/3f))));
             
-            Physics.OverlapCapsuleNonAlloc(point1, point2, 1f, itemcolliders);
+            Physics.OverlapCapsuleNonAlloc(point1, point2, 1f, itemcolliders, interactablelayer);
 
             Ray ray = new Ray(cam.transform.position, Quaternion.Euler(lookup, yrotation, 0f) * Vector3.forward);
 
