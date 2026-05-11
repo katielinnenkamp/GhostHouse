@@ -5,10 +5,12 @@ public class libraryPuzzleManager : MonoBehaviour
     [SerializeField]
     private pedestal[] pedestals;
     private bool[] corrects;
+    public GameObject key;
 
     void Awake()
     {
         corrects = new bool[pedestals.Length];
+        key.SetActive(false);
     }
     
     public void Correct(pedestal submitter)
@@ -51,6 +53,6 @@ public class libraryPuzzleManager : MonoBehaviour
 
     private void PuzzleComplete()
     {
-        Debug.Log("correct order of books");
+        key.SetActive(true);        
     }
 }
