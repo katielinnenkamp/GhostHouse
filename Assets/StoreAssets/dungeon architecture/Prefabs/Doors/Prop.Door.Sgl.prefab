@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4167391208244224}
   - component: {fileID: 33203629450069976}
   - component: {fileID: 23568449141106552}
+  - component: {fileID: 7549871083514052220}
   m_Layer: 0
   m_Name: Prop.Door.Sgl
   m_TagString: Untagged
@@ -91,3 +92,24 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7549871083514052220
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801032711835954}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0061123986, y: 0.010021193, z: 0.0012690058}
+  m_Center: {x: -0.0029351283, y: 0.0049909325, z: -0.00034185796}

@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 6433469388844600138}
   - component: {fileID: 954125406842968967}
   - component: {fileID: 138877401606556654}
+  - component: {fileID: 8984588275488459992}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -337,7 +338,8 @@ MonoBehaviour:
   gravity: 18
   jumppower: 5
   maxairtime: 0.2
-  UI: {fileID: 0}
+  heldindex: 0
+  UI: {fileID: 8374516656766788812}
   righthand: {fileID: 5096901073956595697}
   lefthand: {fileID: 7582640686766441406}
   interactablelayer:
@@ -567,3 +569,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8984588275488459992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374516656766788812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: b4a9a9f7509c64263a9e20878dcb9f49, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 0924bae51fe6345d88babf860500b3ea, type: 3}
+  m_SortingOrder: 0
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}

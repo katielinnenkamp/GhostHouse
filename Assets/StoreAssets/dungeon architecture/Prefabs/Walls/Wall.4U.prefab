@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4783194002096810}
   - component: {fileID: 33494373023698850}
   - component: {fileID: 23537519726028786}
+  - component: {fileID: 4161651469123651840}
   m_Layer: 0
   m_Name: Wall.4U
   m_TagString: Untagged
@@ -91,3 +92,24 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4161651469123651840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670561754233470}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.040000007, y: 0.019999998, z: 0.0069999998}
+  m_Center: {x: 0.0000000037252903, y: 0.009999999, z: -5.1337e-17}

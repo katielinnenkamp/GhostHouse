@@ -75,7 +75,7 @@ public class playerMove : MonoBehaviour
         _audioManager = FindFirstObjectByType<AudioManager>();
         if (_audioManager == null) Debug.LogError("_audioManager is NULL");
 
-        yrotation = 0f;
+        yrotation = transform.rotation.y;
         lookup = 0f;
 
         cam = Camera.main;
