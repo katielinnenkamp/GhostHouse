@@ -2,6 +2,18 @@ using UnityEngine;
 
 public class paintings : Useable
 {
+
+    [System.Serializable]
+    public struct PaintingOverride
+    {
+        public Item itemAsset;
+        public Vector3 customRotation;
+        public Vector3 customScale;
+    }
+
+    [SerializeField]
+    private PaintingOverride[] prefabFixes;
+
     public Item currentPainting;
 
     [SerializeField]
@@ -88,7 +100,27 @@ public class paintings : Useable
             );
 
         displayedPainting.transform.SetParent(paintingPosition);
-        displayedPainting.transform.Rotate(-90f, 0f, 180f);
+
+        displayedPainting.transform.localPosition = Vector3.zero;
+
+        bool appliedFix = false;
+        for (int i = 0; i < prefabFixes.Length; i++)
+        {
+            if (prefabFixes[i].itemAsset == currentPainting)
+            {
+                displayedPainting.transform.localRotation = Quaternion.Euler(prefabFixes[i].customRotation);
+                displayedPainting.transform.localScale = prefabFixes[i].customScale;
+                appliedFix = true;
+                break;
+            }
+
+            if (!appliedFix)
+            {
+                displayedPainting.transform.localRotation = Quaternion.Euler(-90f, 0f, 180f);
+                displayedPainting.transform.localScale = Vector3.one;
+            }
+        }
+
         displayname = currentPainting.name;
     }
 
