@@ -10,19 +10,19 @@ public class anomalouslocation : anomalyscript
     
     void Awake()
     {
-        normalloc = this.transform.position;
-        normalrot = this.transform.rotation;
+        normalloc = this.transform.localPosition;
+        normalrot = this.transform.localRotation;
     }
 
     public override void ApplyAnomaly()
     {
-        gameObject.transform.position = anomalousloc;
-        gameObject.transform.rotation = Quaternion.Euler(anomalousrot);
+        gameObject.transform.localPosition = anomalousloc;
+        gameObject.transform.localRotation = Quaternion.Euler(anomalousrot);
     }
 
     public override void RemoveAnomaly()
     {
-        gameObject.transform.position = normalloc;
+        gameObject.transform.localPosition = normalloc;
         gameObject.transform.rotation = normalrot;
     }
 }

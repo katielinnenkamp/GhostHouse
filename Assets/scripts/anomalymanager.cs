@@ -38,12 +38,23 @@ public class anomalymanager : MonoBehaviour
 
     [SerializeField]
     private bool guaranteeanomalous; //mostly for debugging
+    [SerializeField]
+    private bool manifestallanomalies;
 
     void Awake()
     {
         movetimer = 0;
         curstate = amstate.MOVING;
         instance = this;
+
+        #if UNITY_EDITOR
+            guaranteeanomalous = guaranteeanomalous;
+            manifestallanomalies = manifestallanomalies;
+        #else
+            guaranteeanomalous = false;
+            manifestallanomalies = false;
+        #endif
+        
     }
 
     // Update is called once per frame
@@ -84,6 +95,14 @@ public class anomalymanager : MonoBehaviour
         int ind = Random.Range(0, anomalies.Count - 1);
 
         anomalies[ind].SetAnomalous();
+
+        if(manifestallanomalies)
+        {
+            for(int i = 0; i < anomalies.Count; i++)
+            {
+                anomalies[i].SetAnomalous();
+            }
+        }
     }
 
 

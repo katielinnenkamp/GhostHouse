@@ -2368,7 +2368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b08dfbf00b74cc4982f35f2de7e676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::anomalyscript
-  anomalous: 0
 --- !u!114 &303641816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,10 +2667,11 @@ MonoBehaviour:
   doorclosepos: {x: 0.33, y: 1.22, z: 1.33}
   dooropenpos: {x: -1.475, y: 1.22, z: 1.33}
   curstate: 0
-  timetomove: 4
+  timetomove: 2
   doorspeed: 1
   anomalies: []
   guaranteeanomalous: 1
+  manifestallanomalies: 1
 --- !u!1001 &365406942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17253,8 +17253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8761e75acf29147a48bd8a1af37e6bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::anomalouslocation
-  anomalousloc: {x: 0, y: 0, z: 0}
-  anomalousrot: {x: 0, y: 90, z: 0}
+  anomalousloc: {x: -0.03600001, y: 0, z: 4.965}
+  anomalousrot: {x: 0, y: -90, z: 0}
 --- !u!1001 &1950602672
 PrefabInstance:
   m_ObjectHideFlags: 0
