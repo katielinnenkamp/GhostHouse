@@ -32,7 +32,7 @@ public class anomalymanager : MonoBehaviour
 
     private int correctguesses = 0;
 
-    public List<anomalyscript> anomalies;
+    public List<anomalyscript> anomalies = new List<anomalyscript>();
 
     private bool anomalous = false;
 
@@ -41,20 +41,21 @@ public class anomalymanager : MonoBehaviour
     [SerializeField]
     private bool manifestallanomalies;
 
+    [SerializeField]
+    private int recentAnomalyMemory = 3;
+
+    private List<anomalyscript> recentlyUsedAnomalies = new List<anomalyscript>();
+
     void Awake()
     {
         movetimer = 0;
         curstate = amstate.MOVING;
         instance = this;
 
-        #if UNITY_EDITOR
-            guaranteeanomalous = guaranteeanomalous;
-            manifestallanomalies = manifestallanomalies;
-        #else
-            guaranteeanomalous = false;
-            manifestallanomalies = false;
-        #endif
-        
+    #if !UNITY_EDITOR
+        guaranteeanomalous = false;
+        manifestallanomalies = false;
+    #endif
     }
 
     // Update is called once per frame
@@ -85,26 +86,43 @@ public class anomalymanager : MonoBehaviour
                     ChangeState(amstate.DOOROPENING);
                 }
                 break;
-            default:
-                break;
         }
     }
 
     public void CreateAnomaly()
     {
-        int ind = Random.Range(0, anomalies.Count - 1);
-
-        anomalies[ind].SetAnomalous();
-
-        if(manifestallanomalies)
+        if (manifestallanomalies)
         {
-            for(int i = 0; i < anomalies.Count; i++)
+            for (int i = 0; i < anomalies.Count; i++)
             {
                 anomalies[i].SetAnomalous();
             }
+            return;
+        }
+        List<anomalyscript> possibleAnomalies = new List<anomalyscript>();
+
+        for (int i = 0; i < anomalies.Count; i++)
+        {
+            if (!recentlyUsedAnomalies.Contains(anomalies[i]))
+            {
+                possibleAnomalies.Add(anomalies[i]);
+            }
+        }
+        if (possibleAnomalies.Count == 0)
+        {
+            recentlyUsedAnomalies.Clear();
+            possibleAnomalies.AddRange(anomalies);
+        }
+
+        int ind = Random.Range(0, possibleAnomalies.Count);
+        anomalyscript chosenAnomaly = possibleAnomalies[ind];
+        chosenAnomaly.SetAnomalous();
+        recentlyUsedAnomalies.Add(chosenAnomaly);
+        while(recentlyUsedAnomalies.Count > recentAnomalyMemory)
+        {
+            recentlyUsedAnomalies.RemoveAt(0);
         }
     }
-
 
     public bool DetermineAnomalous()
     {
@@ -160,23 +178,22 @@ public class anomalymanager : MonoBehaviour
             case amstate.MOVING:
                 movetimer = 0;
 
+                foreach(var anomaly in anomalies)
+                {
+                    anomaly.SetNormal();
+                }
+
                 //whenever we transition to moving, decide if the next floor is anomalous or not
                 anomalous = DetermineAnomalous();
                 if(!anomalous)
                 {
                     Debug.Log("floor is not anomalous");
-                    foreach(var anomaly in anomalies)
-                    {
-                        anomaly.SetNormal();
-                    }
                 }
                 else
                 {
                     Debug.Log("floor is anomalous");
                     CreateAnomaly();
                 }
-                break;
-            default:
                 break;
         }
         curstate = newstate;

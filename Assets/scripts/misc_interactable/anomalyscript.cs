@@ -7,15 +7,11 @@ public abstract class anomalyscript : MonoBehaviour
     void Start()
     {
         anomalymanager.instance.anomalies.Add(this);
+        RemoveAnomaly();
     }
     
     public void SetAnomalous()
-    {
-        if(anomalous)
-        {
-            return;
-        }
-        
+    {    
         anomalous = true;
         ApplyAnomaly();
     }
@@ -23,11 +19,6 @@ public abstract class anomalyscript : MonoBehaviour
 
     public void SetNormal()
     {
-        if(!anomalous)
-        {
-            return;
-        }
-
         anomalous = false;
         RemoveAnomaly();
     }
