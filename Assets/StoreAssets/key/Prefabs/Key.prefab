@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 2570922206665840578}
   - component: {fileID: 6842875071106919924}
   - component: {fileID: 993694579116986637}
-  - component: {fileID: 5603483493605272057}
   - component: {fileID: 3297219101794304778}
-  - component: {fileID: 1783495746387414664}
+  - component: {fileID: -3231041121077274129}
   m_Layer: 6
   m_Name: Key
   m_TagString: Untagged
@@ -93,20 +92,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5603483493605272057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582621612835726801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7dd516ea34cd4024b309bbde0af6021, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  enabled: 1
-  item_form: {fileID: 11400000, guid: 14e1ed49e98ab42ac9a61aa0f8279d0c, type: 2}
 --- !u!65 &3297219101794304778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,7 +113,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03246746, y: 0.008091212, z: 0.07087045}
   m_Center: {x: 0.000000113621354, y: -0.0000000013969839, z: -0.000000059604645}
---- !u!114 &1783495746387414664
+--- !u!114 &-3231041121077274129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,4 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
   enabled: 1
-  item_form: {fileID: 11400000, guid: 14e1ed49e98ab42ac9a61aa0f8279d0c, type: 2}
+  item_form: {fileID: 11400000, guid: c3c33bd2f284f427491baf59850f1514, type: 2}
