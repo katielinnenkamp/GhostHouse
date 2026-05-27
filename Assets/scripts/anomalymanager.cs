@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public enum amstate
@@ -12,25 +11,39 @@ public enum amstate
 
 public class anomalymanager : MonoBehaviour
 {
+    public AnomalyText anomalytext;
+    private bool first = true;
+
     public static anomalymanager instance;
 
     public GameObject door;
     public GameObject player;
     private playerMove playerscript;
+
     [SerializeField]
     private Vector3 doorclosepos;
+
     [SerializeField]
     private Vector3 dooropenpos;
 
     public amstate curstate;
 
     private float movetimer;
+
     [SerializeField]
     private float timetomove;
     [SerializeField]
     private float doorspeed;
 
     private int correctguesses = 0;
+    [SerializeField]
+    private int currentfloor = 6;
+
+    [SerializeField]
+    private int winfloor = 0;
+
+    [SerializeField]
+    private int losefloor = 9;
 
     public List<anomalyscript> anomalies = new List<anomalyscript>();
 
@@ -49,13 +62,19 @@ public class anomalymanager : MonoBehaviour
     void Awake()
     {
         movetimer = 0;
-        curstate = amstate.MOVING;
+        curstate = amstate.IDLE;
         instance = this;
+        door.transform.localPosition = doorclosepos;
 
     #if !UNITY_EDITOR
         guaranteeanomalous = false;
         manifestallanomalies = false;
     #endif
+    }
+
+    void Start()
+    {
+        ShowIntro();
     }
 
     // Update is called once per frame
@@ -76,6 +95,7 @@ public class anomalymanager : MonoBehaviour
                 door.transform.localPosition = Vector3.MoveTowards(door.transform.localPosition, dooropenpos, doorspeed * Time.deltaTime);
                 if((door.transform.localPosition - dooropenpos).sqrMagnitude <= 0.01f)
                 {
+                    anomalytext.ShowMessage("Current Floor: B" + currentfloor);
                     ChangeState(amstate.IDLE);
                 }
                 break;
@@ -142,10 +162,8 @@ public class anomalymanager : MonoBehaviour
             return;
         }
 
-        if(!anomalous){ correctguesses++; }
-        else { correctguesses--; correctguesses = Mathf.Max(0, correctguesses); }
-
-        ChangeState(amstate.DOORCLOSING);
+        bool correct = !anomalous;
+        HandleGuess(correct);
     }
 
     public void GoDown()
@@ -155,10 +173,72 @@ public class anomalymanager : MonoBehaviour
             return;
         }
 
-        if(anomalous){ correctguesses++; }
-        else { correctguesses--; correctguesses = Mathf.Max(0, correctguesses); }
+        bool correct = anomalous;
+        HandleGuess(correct);
+    }
+
+    private void HandleGuess(bool correct)
+    {
+        if (correct)
+        {
+            currentfloor--;
+            correctguesses++;
+        }
+        else
+        {
+            currentfloor++;
+            correctguesses--;
+            correctguesses = Mathf.Max(0, correctguesses);
+        }
+
+        
+
+        Debug.Log("Currrent floor: B" + currentfloor);
+
+        if (currentfloor <= winfloor)
+        {
+            WinGame();
+            return;
+        }
+
+        if (currentfloor >= losefloor)
+        {
+            LoseGame();
+            return;
+        }
 
         ChangeState(amstate.DOORCLOSING);
+    }
+
+    private void WinGame()
+    {
+        Debug.Log("You reached B0, you win!");
+        curstate = amstate.IDLE;
+    }
+
+    private void LoseGame()
+    {
+        Debug.Log("You reached B9, you lose!");
+        curstate = amstate.IDLE;
+    }
+
+    private void ShowIntro()
+    {
+        anomalytext.ShowMessage(
+            "Welcome to the anomaly zone. \n" +
+            "You start on Basement level 6, take a look around. \n" +
+            "The first run through is safe, so try to remember everything. \n" +
+            "If everything looks normal, press the safe button in the elevator, but if you find an anomaly, press the anomaly button instead. \n" +
+            "Every correct guess brings you closer to the surface, make it to B0 and you are free! \n" +
+            "But guess incorrectly and fall to B9, you fail and never escape. \n\n" +
+            "Good luck, you'll need it.",
+            StartFirstFloor
+        );
+    }
+
+    private void StartFirstFloor()
+    {
+        ChangeState(amstate.MOVING);
     }
 
     public void ChangeState(amstate newstate)
@@ -183,16 +263,25 @@ public class anomalymanager : MonoBehaviour
                     anomaly.SetNormal();
                 }
 
-                //whenever we transition to moving, decide if the next floor is anomalous or not
-                anomalous = DetermineAnomalous();
-                if(!anomalous)
+                if (first)
                 {
-                    Debug.Log("floor is not anomalous");
+                    anomalous = false;
+                    first = false;
+                    Debug.Log("First floor, no anomalies");
                 }
                 else
                 {
-                    Debug.Log("floor is anomalous");
-                    CreateAnomaly();
+                    //whenever we transition to moving, decide if the next floor is anomalous or not
+                    anomalous = DetermineAnomalous();
+                    if(!anomalous)
+                    {
+                        Debug.Log("floor is not anomalous");
+                    }
+                    else
+                    {
+                        Debug.Log("floor is anomalous");
+                        CreateAnomaly();
+                    }
                 }
                 break;
         }
