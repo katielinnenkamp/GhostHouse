@@ -146,13 +146,13 @@ public class anomalymanager : MonoBehaviour
 
     public bool DetermineAnomalous()
     {
-        int r = Random.Range(0, 12);
-        if(r <= correctguesses || guaranteeanomalous)
+        if (guaranteeanomalous)
         {
             return true;
         }
 
-        return false;
+        int r = Random.Range(0, 7);
+        return r != 0;
     }
 
     public void GoUp()

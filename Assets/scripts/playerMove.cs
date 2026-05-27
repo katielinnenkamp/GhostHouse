@@ -126,7 +126,7 @@ public class playerMove : MonoBehaviour
             Debug.Log("UI doc not found...");
         }
 
-
+        LockCursor();
     }
 
     //functions for capturing the cursor and application focus
@@ -266,6 +266,11 @@ public class playerMove : MonoBehaviour
         if (PauseMenuUI.GameIsPaused)
         {
             return;
+        }
+
+        if(!_isLocked && Mouse.current.leftButton.wasPressedThisFrame && !PauseMenuUI.GameIsPaused)
+        {
+            LockCursor();
         }
 
         //wrap in boolean to disable when inside of a menu
@@ -670,7 +675,7 @@ public class playerMove : MonoBehaviour
         {
             return;
         }
-        
+
         Item held = GetHeldItem();
         if(held != null)
         {
