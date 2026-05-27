@@ -9,7 +9,7 @@ public class AnomalyText : MonoBehaviour
     private bool showingMessage = false;
     private Action onClose;
 
-    void Start()
+    void Awake()
     {
         popupText.gameObject.SetActive(false);
     }

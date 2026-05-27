@@ -263,7 +263,11 @@ public class playerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (PauseMenuUI.GameIsPaused)
+        {
+            return;
+        }
+
         //wrap in boolean to disable when inside of a menu
         if(_isLocked)
         {
@@ -326,6 +330,15 @@ public class playerMove : MonoBehaviour
     private float vertspeed;
     void FixedUpdate()
     {
+        if (PauseMenuUI.GameIsPaused)
+        {
+            if (m_Walking != null)
+            {
+                m_Walking.Pause();
+            }
+            return;
+        }
+
         InteractableUpdate();
         //get our movement and apply it
         Vector3 movement = new Vector3(movex * Time.deltaTime * movespeed, 0f, movey * Time.deltaTime * movespeed);
@@ -653,6 +666,11 @@ public class playerMove : MonoBehaviour
     
     void UseHeld(InputAction.CallbackContext ctx)
     {
+        if (PauseMenuUI.GameIsPaused)
+        {
+            return;
+        }
+        
         Item held = GetHeldItem();
         if(held != null)
         {

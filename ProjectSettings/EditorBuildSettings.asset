@@ -6,8 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/BetaBuildMenu.unity
+    guid: 9b843567136b94f21ac30e2e6abd582a
+  - enabled: 1
     path: Assets/Scenes/AlphaBuild.unity
     guid: 9162edc5b4dde456c8a2ce387bdcfde8
+  - enabled: 1
+    path: Assets/Scenes/anomaly.unity
+    guid: 600f6836f9c304e7aafc0ca470227382
+  - enabled: 1
+    path: Assets/Scenes/parkour.unity
+    guid: 7aee5e8747ac546178c66cbdc87d1f2d
+  - enabled: 1
+    path: Assets/Scenes/FullGameLose.unity
+    guid: 91a756ce04785417aa98f45b2684c3dc
+  - enabled: 1
+    path: Assets/Scenes/FullGameWin.unity
+    guid: c2c5e618c5aca44449516bf495c2e144
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
