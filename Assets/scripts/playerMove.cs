@@ -251,6 +251,14 @@ public class playerMove : MonoBehaviour
 
         return vel;
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag.Equals("Water") == true){
+            Debug.Log("fell in water");
+            transform.position = new Vector3(-16.23f, 1f, -1.25f);
+        }
+    }
     #endregion
 
     //Update and FixedUpdate; 
