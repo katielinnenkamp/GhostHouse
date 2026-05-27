@@ -190,8 +190,12 @@ public class playerMove : MonoBehaviour
     #region movement_helper_functions
     bool Grounded()
     {
-        if(Physics.Raycast(transform.position, Vector3.down, 1.0625f))
+        if(Physics.Raycast(transform.position, Vector3.down, out var collision, 1.0625f))
         {
+            if (collision.collider.gameObject.tag.Equals("Water") == true){
+                Debug.Log("fell in water");
+                transform.position = new Vector3(-16.23f, 1f, -1.25f);
+            }
             return true;
         }
         else
@@ -251,6 +255,14 @@ public class playerMove : MonoBehaviour
 
         return vel;
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag.Equals("Water") == true){
+            Debug.Log("fell in water");
+            transform.position = new Vector3(-16.23f, 1f, -1.25f);
+        }
+    }
     #endregion
 
     //Update and FixedUpdate; 
@@ -268,7 +280,7 @@ public class playerMove : MonoBehaviour
             return;
         }
 
-        if(!_isLocked && Mouse.current.leftButton.wasPressedThisFrame && !PauseMenuUI.GameIsPaused)
+        if(!_isLocked && openedmenu == null && Mouse.current.leftButton.wasPressedThisFrame && !PauseMenuUI.GameIsPaused)
         {
             LockCursor();
         }

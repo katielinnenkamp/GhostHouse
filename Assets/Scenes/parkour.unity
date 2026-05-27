@@ -130,10 +130,9 @@ GameObject:
   - component: {fileID: 121721}
   - component: {fileID: 121724}
   - component: {fileID: 121723}
-  - component: {fileID: 121722}
   m_Layer: 0
   m_Name: water (1)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,28 +152,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &121722
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121720}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &121723
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -531,10 +508,9 @@ GameObject:
   - component: {fileID: 11636087}
   - component: {fileID: 11636090}
   - component: {fileID: 11636089}
-  - component: {fileID: 11636088}
   m_Layer: 0
   m_Name: water (15)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -554,28 +530,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &11636088
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11636086}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &11636089
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -716,10 +670,9 @@ GameObject:
   - component: {fileID: 26253160}
   - component: {fileID: 26253163}
   - component: {fileID: 26253162}
-  - component: {fileID: 26253161}
   m_Layer: 0
   m_Name: water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,28 +692,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &26253161
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26253159}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &26253162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1001,10 +932,9 @@ GameObject:
   - component: {fileID: 47078673}
   - component: {fileID: 47078676}
   - component: {fileID: 47078675}
-  - component: {fileID: 47078674}
   m_Layer: 0
   m_Name: water (28)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1024,28 +954,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &47078674
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47078672}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &47078675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1389,10 +1297,9 @@ GameObject:
   - component: {fileID: 81070010}
   - component: {fileID: 81070013}
   - component: {fileID: 81070012}
-  - component: {fileID: 81070011}
   m_Layer: 0
   m_Name: water (11)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1412,28 +1319,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &81070011
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81070009}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &81070012
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1975,10 +1860,9 @@ GameObject:
   - component: {fileID: 133531655}
   - component: {fileID: 133531658}
   - component: {fileID: 133531657}
-  - component: {fileID: 133531656}
   m_Layer: 0
   m_Name: water (26)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1998,28 +1882,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &133531656
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133531654}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &133531657
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2538,10 +2400,9 @@ GameObject:
   - component: {fileID: 170511387}
   - component: {fileID: 170511390}
   - component: {fileID: 170511389}
-  - component: {fileID: 170511388}
   m_Layer: 0
   m_Name: water (24)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2561,28 +2422,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &170511388
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170511386}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &170511389
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5526,10 +5365,9 @@ GameObject:
   - component: {fileID: 428220996}
   - component: {fileID: 428220999}
   - component: {fileID: 428220998}
-  - component: {fileID: 428220997}
   m_Layer: 0
   m_Name: water (8)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5549,28 +5387,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &428220997
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428220995}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &428220998
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5969,10 +5785,9 @@ GameObject:
   - component: {fileID: 479710174}
   - component: {fileID: 479710177}
   - component: {fileID: 479710176}
-  - component: {fileID: 479710175}
   m_Layer: 0
   m_Name: water (2)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5992,28 +5807,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &479710175
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479710173}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &479710176
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6783,9 +6576,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 518812114}
+  - component: {fileID: 518812116}
   m_Layer: 0
   m_Name: water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6835,6 +6629,27 @@ Transform:
   - {fileID: 1539796333}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &518812116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518812113}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30.042671, y: 1.3526971, z: 21.072342}
+  m_Center: {x: -10.592369, y: -2, z: 4.72062}
 --- !u!4 &522589740 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4939393527692384, guid: 74c136b93440e134eb65c82bc6417f6a, type: 3}
@@ -8031,10 +7846,9 @@ GameObject:
   - component: {fileID: 609385778}
   - component: {fileID: 609385781}
   - component: {fileID: 609385780}
-  - component: {fileID: 609385779}
   m_Layer: 0
   m_Name: water (4)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8054,28 +7868,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &609385779
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609385777}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &609385780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8708,10 +8500,9 @@ GameObject:
   - component: {fileID: 658995647}
   - component: {fileID: 658995650}
   - component: {fileID: 658995649}
-  - component: {fileID: 658995648}
   m_Layer: 0
   m_Name: water (6)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8731,28 +8522,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &658995648
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658995646}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &658995649
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9762,10 +9531,9 @@ GameObject:
   - component: {fileID: 780828600}
   - component: {fileID: 780828603}
   - component: {fileID: 780828602}
-  - component: {fileID: 780828601}
   m_Layer: 0
   m_Name: water (29)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9785,28 +9553,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &780828601
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780828599}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &780828602
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10112,10 +9858,9 @@ GameObject:
   - component: {fileID: 801710983}
   - component: {fileID: 801710986}
   - component: {fileID: 801710985}
-  - component: {fileID: 801710984}
   m_Layer: 0
   m_Name: water (27)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10135,28 +9880,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &801710984
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801710982}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &801710985
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13459,10 +13182,9 @@ GameObject:
   - component: {fileID: 1019810546}
   - component: {fileID: 1019810549}
   - component: {fileID: 1019810548}
-  - component: {fileID: 1019810547}
   m_Layer: 0
   m_Name: water (20)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13482,28 +13204,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1019810547
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019810545}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1019810548
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14505,10 +14205,9 @@ GameObject:
   - component: {fileID: 1153224936}
   - component: {fileID: 1153224939}
   - component: {fileID: 1153224938}
-  - component: {fileID: 1153224937}
   m_Layer: 0
   m_Name: water (21)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14528,28 +14227,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1153224937
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153224935}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1153224938
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15164,10 +14841,9 @@ GameObject:
   - component: {fileID: 1191447528}
   - component: {fileID: 1191447531}
   - component: {fileID: 1191447530}
-  - component: {fileID: 1191447529}
   m_Layer: 0
   m_Name: water (22)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15187,28 +14863,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1191447529
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191447527}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1191447530
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16069,10 +15723,9 @@ GameObject:
   - component: {fileID: 1247169618}
   - component: {fileID: 1247169621}
   - component: {fileID: 1247169620}
-  - component: {fileID: 1247169619}
   m_Layer: 0
   m_Name: water (13)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16092,28 +15745,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1247169619
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247169617}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1247169620
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17316,10 +16947,9 @@ GameObject:
   - component: {fileID: 1341702612}
   - component: {fileID: 1341702615}
   - component: {fileID: 1341702614}
-  - component: {fileID: 1341702613}
   m_Layer: 0
   m_Name: water (12)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17339,28 +16969,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1341702613
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341702611}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1341702614
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19412,10 +19020,9 @@ GameObject:
   - component: {fileID: 1450457529}
   - component: {fileID: 1450457532}
   - component: {fileID: 1450457531}
-  - component: {fileID: 1450457530}
   m_Layer: 0
   m_Name: water (5)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19435,28 +19042,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1450457530
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450457528}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1450457531
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20532,10 +20117,9 @@ GameObject:
   - component: {fileID: 1539796333}
   - component: {fileID: 1539796336}
   - component: {fileID: 1539796335}
-  - component: {fileID: 1539796334}
   m_Layer: 0
   m_Name: water (3)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20555,28 +20139,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1539796334
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539796332}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1539796335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20645,10 +20207,9 @@ GameObject:
   - component: {fileID: 1542811069}
   - component: {fileID: 1542811072}
   - component: {fileID: 1542811071}
-  - component: {fileID: 1542811070}
   m_Layer: 0
   m_Name: water (19)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20668,28 +20229,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1542811070
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542811068}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1542811071
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21662,10 +21201,9 @@ GameObject:
   - component: {fileID: 1602981316}
   - component: {fileID: 1602981319}
   - component: {fileID: 1602981318}
-  - component: {fileID: 1602981317}
   m_Layer: 0
   m_Name: water (7)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21685,28 +21223,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1602981317
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602981315}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1602981318
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24268,10 +23784,9 @@ GameObject:
   - component: {fileID: 1822034891}
   - component: {fileID: 1822034894}
   - component: {fileID: 1822034893}
-  - component: {fileID: 1822034892}
   m_Layer: 0
   m_Name: water (23)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24291,28 +23806,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1822034892
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822034890}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1822034893
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24386,10 +23879,9 @@ GameObject:
   - component: {fileID: 1831207756}
   - component: {fileID: 1831207759}
   - component: {fileID: 1831207758}
-  - component: {fileID: 1831207757}
   m_Layer: 0
   m_Name: water (16)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24409,28 +23901,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1831207757
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831207755}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1831207758
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25398,10 +24868,9 @@ GameObject:
   - component: {fileID: 1903723109}
   - component: {fileID: 1903723112}
   - component: {fileID: 1903723111}
-  - component: {fileID: 1903723110}
   m_Layer: 0
   m_Name: water (14)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25421,28 +24890,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1903723110
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903723108}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1903723111
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25930,10 +25377,9 @@ GameObject:
   - component: {fileID: 1966755244}
   - component: {fileID: 1966755247}
   - component: {fileID: 1966755246}
-  - component: {fileID: 1966755245}
   m_Layer: 0
   m_Name: water (17)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25953,28 +25399,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1966755245
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966755243}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1966755246
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26736,10 +26160,9 @@ GameObject:
   - component: {fileID: 2034932748}
   - component: {fileID: 2034932751}
   - component: {fileID: 2034932750}
-  - component: {fileID: 2034932749}
   m_Layer: 0
   m_Name: water (10)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26759,28 +26182,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2034932749
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034932747}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2034932750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26906,10 +26307,9 @@ GameObject:
   - component: {fileID: 2037163470}
   - component: {fileID: 2037163473}
   - component: {fileID: 2037163472}
-  - component: {fileID: 2037163471}
   m_Layer: 0
   m_Name: water (18)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26929,28 +26329,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2037163471
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037163469}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2037163472
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27091,10 +26469,9 @@ GameObject:
   - component: {fileID: 2049315307}
   - component: {fileID: 2049315310}
   - component: {fileID: 2049315309}
-  - component: {fileID: 2049315308}
   m_Layer: 0
   m_Name: water (9)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27114,28 +26491,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2049315308
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049315306}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2049315309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27395,10 +26750,9 @@ GameObject:
   - component: {fileID: 2063542409}
   - component: {fileID: 2063542412}
   - component: {fileID: 2063542411}
-  - component: {fileID: 2063542410}
   m_Layer: 0
   m_Name: water (25)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27418,28 +26772,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 518812114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2063542410
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063542408}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2063542411
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Button text="Play From Start" name="play_start" style="top: 40%; width: 40%; left: 30%; white-space: pre; -unity-text-align: middle-center; position: absolute;"/>
+        <ui:Button text="Play From Anomaly Puzzle" name="play_anomaly" style="top: 50%; width: 40%; left: 30%; white-space: pre; -unity-text-align: middle-center; position: absolute;"/>
+        <ui:Button text="Play Ending Sequence" name="play_ending" style="top: 60%; width: 40%; left: 30%; white-space: pre; -unity-text-align: middle-center; position: absolute;"/>
+    </ui:VisualElement>
+</ui:UXML>

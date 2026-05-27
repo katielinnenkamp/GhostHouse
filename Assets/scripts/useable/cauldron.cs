@@ -15,6 +15,7 @@ public class cauldron : Useable
         m_Bubble = m_Sources[0];
         m_Plunk = m_Sources[1];
         m_PotionDrop = m_Sources[2];
+        m_Bubble.Play();
 
     }
 
