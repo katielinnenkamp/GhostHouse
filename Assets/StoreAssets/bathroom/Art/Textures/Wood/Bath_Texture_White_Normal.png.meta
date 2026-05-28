@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: e5713e38c9f0a3e4aac128cdefb2c03d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 318333
+  packageName: "Low-Poly BathRoom Kit \u2013 Stylized Wooden Set"
+  packageVersion: 1.0
+  assetPath: Assets/Low-Poly Bathroom Kit - Stylized Wooden Set/Art/Textures/Wood/Bath_Texture_White_Normal.png
+  uploadId: 771071
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +76,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -154,10 +161,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 318333
-  packageName: "Low-Poly BathRoom Kit \u2013 Stylized Wooden Set"
-  packageVersion: 1.0
-  assetPath: Assets/Low-Poly Bathroom Kit - Stylized Wooden Set/Art/Textures/Wood/Bath_Texture_White_Normal.png
-  uploadId: 771071
